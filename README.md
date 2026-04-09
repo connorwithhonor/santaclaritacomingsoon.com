@@ -1,2 +1,0 @@
-# santaclaritacomingsoon.com
-SantaClaritaComingSoon.com

@@ -1,1 +1,1012 @@
-{"id":"/index.html","path":"/index.html","sha":"5e99882776e58247feed55c96d153a60e585f86e","mime_type":"text/html","size":32625,"site_id":"7686ebeb-389e-403b-ac3d-a5b1b183d4fc","deploy_id":"69bc8efc740e8b075ac77fa8"}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>SantaClaritaComingSoon.com — Coming Soon Listings Delivered by Email</title>
+  <meta name="description" content="Get Santa Clarita Coming Soon listings delivered by email — often up to 21 days before the public sees them. Not on Zillow/Redfin/Homes.com/Realtor.com during Coming Soon." />
+
+  <link rel="icon" href="https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697e9404f7a8778ce3d0c151.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697e9404f7a8778ce3d0c151.svg">
+
+  <style>
+    :root{
+      --bg:#070A0F;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.10);
+      --stroke2:rgba(255,255,255,.14);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --muted2:rgba(255,255,255,.55);
+      --shadow: 0 22px 80px rgba(0,0,0,.55);
+
+      --brand:#22d3ee;     /* cyan */
+      --brand2:#38bdf8;    /* sky */
+      --good:#2dd4bf;      /* teal */
+      --warn:#fbbf24;      /* amber */
+      --danger:#fb7185;    /* rose */
+
+      --radius:22px;
+      --radius2:28px;
+
+      --mx:50%;
+      --my:25%;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(34,211,238,.13), transparent 55%),
+                  radial-gradient(1100px 700px at 75% 15%, rgba(56,189,248,.10), transparent 55%),
+                  radial-gradient(900px 700px at 50% 80%, rgba(45,212,191,.08), transparent 60%),
+                  var(--bg);
+      overflow-x:hidden;
+    }
+
+    /* subtle grid */
+    .grid-bg{
+      position:fixed; inset:0; pointer-events:none; z-index:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(900px 700px at 50% 35%, black 45%, transparent 78%);
+      opacity:.35;
+    }
+
+    /* cursor spotlight */
+    .spotlight{
+      position:fixed; inset:-2px; pointer-events:none; z-index:1;
+      background: radial-gradient(520px 520px at var(--mx) var(--my), rgba(34,211,238,.12), transparent 60%);
+      mix-blend-mode: screen;
+      opacity:.9;
+    }
+
+    .container{
+      position:relative;
+      z-index:2;
+      width:min(1160px, calc(100% - 40px));
+      margin:0 auto;
+      padding: 26px 0 84px;
+    }
+
+    /* top bar */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 14px 16px;
+      border:1px solid var(--stroke);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: 0 10px 50px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(34,211,238,.15);
+    }
+    .topbar small{ color:var(--muted2); font-weight:600; }
+    .top-actions{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    }
+
+    .btn{
+      border:1px solid var(--stroke2);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight:800;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      user-select:none;
+      text-decoration:none;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      will-change: transform;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(34,211,238,.35);
+      box-shadow: 0 10px 28px rgba(0,0,0,.30);
+    }
+    .btn-primary{
+      background: linear-gradient(180deg, rgba(34,211,238,.22), rgba(34,211,238,.10));
+      border-color: rgba(34,211,238,.45);
+    }
+    .btn-primary:hover{
+      border-color: rgba(34,211,238,.70);
+      box-shadow: 0 14px 34px rgba(34,211,238,.12), 0 14px 34px rgba(0,0,0,.28);
+    }
+    .btn-ghost{ background: rgba(255,255,255,.03); }
+    .btn-danger{
+      background: linear-gradient(180deg, rgba(251,113,133,.16), rgba(251,113,133,.07));
+      border-color: rgba(251,113,133,.35);
+    }
+
+    /* hero layout */
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.55fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .hero{ grid-template-columns:1fr; }
+    }
+
+    /* hero card */
+    .heroCard{
+      position:relative;
+      border-radius: var(--radius2);
+      border:1px solid var(--stroke);
+      overflow:hidden;
+      background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.72));
+      box-shadow: var(--shadow);
+      min-height: 430px;
+    }
+
+    /* TRUE CROSSFADE LAYERS */
+    .heroPhotos{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
+    }
+    .heroPhoto{
+      position:absolute;
+      inset:0;
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
+      opacity:0;
+      transition: opacity 1.8s ease;
+      will-change: opacity;
+      transform: translateZ(0);
+    }
+    .heroPhoto.is-active{ opacity:1; }
+
+    /* overlays sit ABOVE photos */
+    .heroCard::before{
+      content:"";
+      position:absolute; inset:0;
+      z-index:1;
+      background: radial-gradient(680px 420px at 30% 20%, rgba(34,211,238,.18), transparent 55%),
+                  radial-gradient(520px 420px at 70% 18%, rgba(56,189,248,.12), transparent 58%),
+                  linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62));
+      pointer-events:none;
+    }
+    .heroCard::after{
+      content:"";
+      position:absolute; inset:0;
+      z-index:1;
+      background: linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.14) 45%, rgba(0,0,0,.55));
+      opacity:.65;
+      pointer-events:none;
+    }
+
+    .heroInner{
+      position:relative;
+      z-index:2;
+      padding: 26px 26px 22px;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+      gap:14px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.07);
+      border-radius:999px;
+      padding: 10px 12px;
+      width: fit-content;
+      backdrop-filter: blur(8px);
+      font-weight:900;
+      letter-spacing:.4px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(255,255,255,.88);
+    }
+    .pill .glow{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(34,211,238,.18);
+      flex:none;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(34px, 4.0vw, 54px);
+      line-height:1.04;
+      letter-spacing:-.7px;
+      font-weight: 950;
+      max-width: 880px;
+    }
+    h1 .accent{ color: var(--brand); text-shadow: 0 12px 40px rgba(34,211,238,.18); }
+    .sub{
+      margin:0;
+      color: rgba(255,255,255,.80);
+      font-size: 15.5px;
+      max-width: 780px;
+      line-height:1.55;
+    }
+    .sub strong{ color: rgba(255,255,255,.95); }
+
+    .heroCtas{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 2px;
+      align-items:center;
+    }
+
+    .heroVideo{
+      margin-top: 16px;
+      border:1px solid var(--stroke2);
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.75));
+      box-shadow: 0 18px 70px rgba(0,0,0,.50);
+      overflow:hidden;
+      position:relative;
+      aspect-ratio: 16 / 9;
+      height:0;
+      padding-bottom:56.25%;
+    }
+    @supports (aspect-ratio: 1){
+      .heroVideo{
+        height:auto;
+        padding-bottom:0;
+      }
+    }
+    .heroVideo::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background: linear-gradient(180deg, rgba(34,211,238,.12), transparent 60%);
+      mix-blend-mode: screen;
+    }
+    .heroVideo iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      background:#000;
+    }
+
+    /* “Connor strip” */
+    .heroStrip{
+      margin-top:auto;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr 1fr;
+      gap:10px;
+    }
+    @media (max-width: 640px){
+      .heroStrip{ grid-template-columns: 1fr; }
+    }
+
+    .miniCard{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      border-radius: 18px;
+      padding: 12px 12px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      backdrop-filter: blur(10px);
+    }
+    .avatar{
+      width:42px; height:42px;
+      border-radius: 14px;
+      background: url("https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/696fa38ccc95d73cca1b1774.png") center/cover no-repeat;
+      border:1px solid rgba(255,255,255,.18);
+      flex:none;
+    }
+    .miniCard b{ display:block; font-size: 13px; }
+    .miniCard small{ display:block; color: var(--muted2); font-weight:700; margin-top:2px; }
+    .miniLink{
+      color: rgba(255,255,255,.92);
+      text-decoration:none;
+      font-weight:900;
+    }
+    .miniLink:hover{ color: white; text-decoration: underline; }
+
+    /* right “what you'll get” */
+    .sideCard{
+      border:1px solid var(--stroke);
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: 0 14px 70px rgba(0,0,0,.45);
+      backdrop-filter: blur(10px);
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      min-height: 430px;
+    }
+    .sideCard h3{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:-.2px;
+      font-weight: 950;
+    }
+    .sideCard p{
+      margin:0;
+      color: var(--muted);
+      line-height:1.45;
+      font-size: 14px;
+    }
+
+    .benefits{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top: 4px;
+    }
+
+    /* animated “check” cards */
+    .bCard{
+      position:relative;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      border-radius: 18px;
+      padding: 12px 12px 12px 12px;
+      display:flex;
+      gap:12px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+      will-change: transform;
+      overflow:hidden;
+    }
+    .bCard:hover{
+      transform: translateY(-2px) scale(1.01);
+      border-color: rgba(34,211,238,.30);
+      box-shadow: 0 18px 48px rgba(0,0,0,.35);
+      background: rgba(0,0,0,.28);
+    }
+    .check{
+      width:24px; height:24px;
+      border-radius: 10px;
+      display:grid;
+      place-items:center;
+      background: rgba(34,211,238,.14);
+      border:1px solid rgba(34,211,238,.30);
+      flex:none;
+      transform: translate3d(0,0,0);
+      transition: transform .12s ease;
+    }
+    .check::before{
+      content:"";
+      width:10px; height:6px;
+      border-left: 3px solid rgba(255,255,255,.92);
+      border-bottom: 3px solid rgba(255,255,255,.92);
+      transform: rotate(-45deg);
+      margin-top:-1px;
+    }
+    .bText b{ display:block; font-size: 14px; }
+    .bText small{ display:block; color: var(--muted2); font-weight:700; margin-top:3px; line-height:1.35; }
+
+    .sideCtas{
+      margin-top:auto;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    /* sections */
+    section{ margin-top: 42px; }
+    .sectionTitle{
+      font-size: 26px;
+      font-weight: 950;
+      letter-spacing:-.4px;
+      margin:0 0 6px;
+    }
+    .sectionSub{
+      margin:0;
+      color: var(--muted);
+      line-height:1.55;
+      max-width: 920px;
+    }
+
+    /* cards grid */
+    .grid3{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){
+      .grid3{ grid-template-columns: 1fr; }
+    }
+    .infoCard{
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      padding: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 56px rgba(0,0,0,.35);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+      will-change: transform;
+      transform: translate3d(0,0,0);
+    }
+    .infoCard:hover{
+      transform: translateY(-2px) scale(1.01);
+      border-color: rgba(34,211,238,.28);
+      box-shadow: 0 18px 66px rgba(0,0,0,.40);
+    }
+    .infoCard h4{
+      margin:0 0 6px;
+      font-size: 16px;
+      font-weight: 950;
+      letter-spacing:-.2px;
+    }
+    .infoCard p{
+      margin:0;
+      color: var(--muted);
+      line-height:1.55;
+      font-size: 14px;
+    }
+
+    /* FAQs */
+    .faqWrap{
+      margin-top: 16px;
+      border:1px solid var(--stroke);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    details{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding: 14px 16px;
+    }
+    details:first-child{ border-top:none; }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight: 950;
+      letter-spacing:-.2px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .chev{
+      width: 12px; height: 12px;
+      border-right: 3px solid rgba(255,255,255,.70);
+      border-bottom: 3px solid rgba(255,255,255,.70);
+      transform: rotate(45deg);
+      transition: transform .18s ease;
+      flex:none;
+    }
+    details[open] .chev{ transform: rotate(225deg); }
+    .faqBody{
+      margin-top: 10px;
+      color: var(--muted);
+      line-height:1.6;
+      font-size: 14px;
+      max-width: 980px;
+    }
+    .faqBody strong{ color: rgba(255,255,255,.92); }
+
+    /* form section */
+    .formWrap{
+      margin-top: 22px;
+      border:1px solid rgba(34,211,238,.22);
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(34,211,238,.07), rgba(255,255,255,.02));
+      box-shadow: 0 18px 78px rgba(0,0,0,.45);
+      padding: 14px;
+      overflow:hidden;
+    }
+    .formHeader{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      padding: 10px 10px 14px;
+    }
+    .formHeader h3{
+      margin:0;
+      font-size: 18px;
+      font-weight: 950;
+      letter-spacing:-.2px;
+    }
+    .formHeader p{
+      margin:4px 0 0;
+      color: var(--muted);
+      line-height:1.45;
+      font-size: 13.5px;
+      max-width: 840px;
+    }
+
+    /* Make iframe tall enough to avoid internal scrolling */
+    .formFrame{
+      width:100%;
+      height: 1120px; /* desktop */
+      border:none;
+      border-radius: 18px;
+      background: rgba(0,0,0,.18);
+    }
+    @media (max-width: 560px){
+      .formFrame{ height: 1300px; }
+    }
+
+    /* footer */
+    footer{
+      margin-top: 42px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--muted2);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      font-weight:700;
+    }
+    footer a{ color: rgba(255,255,255,.82); text-decoration:none; font-weight:900; }
+    footer a:hover{ color:white; text-decoration:underline; }
+
+    /* reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      .btn, .infoCard, .bCard { transition:none !important; }
+      .heroPhoto{ transition:none !important; }
+      .spotlight{ display:none; }
+    }
+  </style>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"><meta property="og:image" content="https://santaclaritacomingsoon.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://santaclaritacomingsoon.com/og-image.png"></head>
+
+<body>
+  <div class="grid-bg"></div>
+  <div class="spotlight"></div>
+
+  <div class="container">
+    <!-- Top Bar -->
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <div>
+          <div>SantaClaritaComingSoon.com</div>
+          <small>Coming Soon listings delivered by email</small>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <a class="btn btn-ghost" href="https://santaclaritaopenhouses.com" target="_blank" rel="noopener">View All Active Listings</a>
+        <a class="btn btn-danger" href="tel:6614001720">Call/Text: 661-400-1720</a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero" id="top">
+      <div class="heroCard" id="heroCard">
+        <!-- TRUE CROSSFADE PHOTO LAYERS -->
+        <div class="heroPhotos" aria-hidden="true">
+          <div class="heroPhoto is-active" id="heroPhotoA"></div>
+          <div class="heroPhoto" id="heroPhotoB"></div>
+        </div>
+
+        <div class="heroInner">
+          <div class="pill"><span class="glow"></span> NOT ON ZILLOW. NOT ON REDFIN. NOT ON HOMES.COM. NOT ON REALTOR.COM.</div>
+
+          <h1>
+            Get “Coming Soon” listings — often up to <span class="accent">21 days</span> before the public sees them.
+          </h1>
+
+          <p class="sub">
+            These listings <strong>do not appear on the big portals during the Coming Soon window</strong>.
+            The only way this works is: you tell me what you want, and I email them directly to you.
+          </p>
+
+          <p class="sub" style="color:rgba(255,255,255,.72); font-size:14px;">
+            No pressure. This isn’t a marriage proposal. You just get the listings — the way you want them — by email.
+          </p>
+
+          <div class="heroCtas">
+            <button class="btn btn-primary" data-scroll="#form">
+              Yes — send me the Coming Soon listings
+            </button>
+            <button class="btn" data-scroll="#faq">
+              How it works (FAQ)
+            </button>
+            <a class="btn btn-danger" href="tel:6614001720">Call/Text Connor</a>
+          </div>
+
+          <div class="heroVideo">
+            <iframe
+              src="https://www.loom.com/embed/2c7e6812ec7840c1bb19ce47651c1f13"
+              title="How Coming Soon Listings Work"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="heroStrip">
+            <div class="miniCard">
+              <div class="avatar"></div>
+              <div>
+                <b>Local Realtor</b>
+                <small>Connor MacIvor (Connor with Honor)</small>
+              </div>
+            </div>
+
+            <div class="miniCard">
+              <div style="width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);display:grid;place-items:center;font-weight:950;">
+                CA
+              </div>
+              <div>
+                <b>CA DRE</b>
+                <small>#01238257</small>
+              </div>
+            </div>
+
+            <div class="miniCard">
+              <div style="width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);display:grid;place-items:center;font-weight:950;">
+                🌐
+              </div>
+              <div>
+                <b>All Active Listings</b>
+                <small><a class="miniLink" href="https://santaclaritaopenhouses.com" target="_blank" rel="noopener">SantaClaritaOpenHouses.com</a></small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="sideCard">
+        <h3>What you’ll get</h3>
+        <p>
+          You pick the cities (or region), optional price range + property type. Then choose how often you want them.
+        </p>
+
+        <div class="benefits">
+          <div class="bCard">
+            <div class="check"></div>
+            <div class="bText">
+              <b>Instant alerts</b>
+              <small>Get emailed as soon as a Coming Soon listing hits.</small>
+            </div>
+          </div>
+
+          <div class="bCard">
+            <div class="check"></div>
+            <div class="bText">
+              <b>Daily or weekly digest</b>
+              <small>Prefer one clean email at a set schedule? You choose.</small>
+            </div>
+          </div>
+
+          <div class="bCard">
+            <div class="check"></div>
+            <div class="bText">
+              <b>Better positioning</b>
+              <small>Use the runway to get financing + strategy tight before Day 1.</small>
+            </div>
+          </div>
+
+          <div class="bCard">
+            <div class="check"></div>
+            <div class="bText">
+              <b>Santa Clarita + beyond</b>
+              <small>SCV, Los Angeles County, and other SoCal areas where available.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="sideCtas">
+          <button class="btn btn-primary" data-scroll="#form">
+            Start here — fill out the form
+          </button>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.18);border-radius:18px;padding:12px 12px;">
+            <div>
+              <div style="font-weight:900; font-size:13px;">Questions?</div>
+              <div style="color:rgba(255,255,255,.65); font-weight:700; font-size:12.5px; margin-top:2px;">
+                Click on SALLIE (bottom-right) to get help or book Connor.
+              </div>
+            </div>
+            <a class="btn btn-ghost" href="tel:6614001720">Call/Text</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advantage -->
+    <section id="advantage">
+      <h2 class="sectionTitle">Why “Coming Soon” is a real advantage</h2>
+      <p class="sectionSub">
+        The Coming Soon window gives you the runway to prepare before the crowds show up.
+        In competitive markets, preparation + speed is how you win.
+      </p>
+
+      <div class="grid3">
+        <div class="infoCard">
+          <h4>Preparation beats panic</h4>
+          <p>Use the runway to get financing, strategy, and decisions tight before the public rush starts.</p>
+        </div>
+        <div class="infoCard">
+          <h4>Pricing creates a frenzy</h4>
+          <p>If a home is priced right (sometimes below market), demand spikes. Being early matters.</p>
+        </div>
+        <div class="infoCard">
+          <h4>Day 1 is “zero hour”</h4>
+          <p>When it goes live, you want your ducks in a row — not asking basic questions while others write offers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="sectionTitle">FAQ</h2>
+      <p class="sectionSub">Straight answers. No fluff.</p>
+
+      <div class="faqWrap">
+        <details class="faq_details">
+          <summary>
+            Are these listings really not on Zillow / Redfin / Homes.com / Realtor.com?
+            <span class="chev"></span>
+          </summary>
+          <div class="faqBody">
+            <strong>Correct.</strong> During the Coming Soon window, they are <strong>not</strong> visible on public portals.
+            The only way to receive them is <strong>direct email delivery from a licensed real estate agent</strong>.
+          </div>
+        </details>
+
+        <details class="faq_details">
+          <summary>
+            How early can I see Coming Soon listings?
+            <span class="chev"></span>
+          </summary>
+          <div class="faqBody">
+            In many cases, <strong>up to 21 days early</strong>. Sometimes less — it depends on the seller’s plan and timing.
+          </div>
+        </details>
+
+        <details class="faq_details">
+          <summary>
+            Can I request areas outside Santa Clarita?
+            <span class="chev"></span>
+          </summary>
+          <div class="faqBody">
+            Yes. Tell Connor the cities/region you want. If the local board provides Coming Soon data, Connor can usually include it.
+            <strong>Los Angeles County is easy</strong> and many other SoCal areas are possible too.
+          </div>
+        </details>
+
+        <details class="faq_details">
+          <summary>
+            Is this spam? Do I have to use Connor as my agent?
+            <span class="chev"></span>
+          </summary>
+          <div class="faqBody">
+            <strong>No spam.</strong> You’ll only receive what you request, and you can stop anytime.
+            And <strong>no</strong> — this isn’t a commitment. You can get the listings without hiring Connor.
+          </div>
+        </details>
+
+        <details class="faq_details">
+          <summary>
+            What should I put in the request?
+            <span class="chev"></span>
+          </summary>
+          <div class="faqBody">
+            Minimum: name, email (required), phone (for quick clarification), and the cities/areas you want.
+            Optional (helpful): price range, property type, attached vs detached, must-haves, and delivery schedule.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section id="form">
+      <h2 class="sectionTitle">Get the Coming Soon listings</h2>
+      <p class="sectionSub">
+        Fill this out and Connor will email the Coming Soon listings based on your requested areas and preferences.
+      </p>
+
+      <div class="formWrap">
+        <div class="formHeader">
+          <div>
+            <h3>Coming Soon Request Form</h3>
+            <p>
+              Choose your cities/areas, schedule, and preferences. Delivered by email.
+              If you want immediate help, call/text Connor: <strong>661-400-1720</strong>.
+            </p>
+          </div>
+          <a class="btn btn-danger" href="tel:6614001720">Call/Text Connor</a>
+        </div>
+
+        <!-- Embed Form -->
+        <iframe
+          src="https://api.honorelevate.com/widget/form/zW2ovcb4gbnGqyRum7jr"
+          style="width:100%;border:none;border-radius:18px"
+          class="formFrame"
+          id="inline-zW2ovcb4gbnGqyRum7jr"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Coming Soon Form Live Form"
+          data-height="1014"
+          data-layout-iframe-id="inline-zW2ovcb4gbnGqyRum7jr"
+          data-form-id="zW2ovcb4gbnGqyRum7jr"
+          title="Coming Soon Form Live Form">
+        </iframe>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Connor MacIvor (Connor with Honor) — CA DRE #01238257</div>
+      <div>
+        <a href="https://santaclaritaopenhouses.com" target="_blank" rel="noopener">SantaClaritaOpenHouses.com</a>
+        &nbsp;|&nbsp;
+        <a href="tel:6614001720">Call/Text: 661-400-1720</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Form embed script -->
+  <script src="https://api.honorelevate.com/js/form_embed.js"></script>
+
+  <script>
+    // =========================
+    // TRUE CROSSFADE HERO ROTATOR (Luxury)
+    // =========================
+    const heroImages = [
+      // Original 3
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697c0e9ad5b65eb10bcad096.png",
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697c0e9904b05b054972fb45.png",
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697c0e99f7a87738c149e325.png",
+
+      // New 7
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697cbafc1fd82755b9e77fd3.png",
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697cbafcf7a877826f755bba.png",
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697cbafc50158bdad0bb804d.png",
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697cbafc1311f61da1eae20f.png",
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697cbafc5accfa9d141f645b.png",
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697cbafca413e84aeadf8ad5.png",
+      "https://storage.googleapis.com/msgsndr/3z37W4oH1lMfraSObL1X/media/697cbafcd6f4976d130bd3dd.png"
+    ];
+
+    // Luxury: random order each visit
+    heroImages.sort(() => Math.random() - 0.5);
+
+    // Luxury pacing
+    const ROTATE_MS = 12000;   // slower = more premium (try 14000 if you want)
+    const FADE_MS   = 1800;    // must match CSS transition (1.8s)
+
+    const photoA = document.getElementById("heroPhotoA");
+    const photoB = document.getElementById("heroPhotoB");
+
+    let activeIsA = true;
+    let idx = 0;
+
+    function preload(url){
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = url;
+      });
+    }
+
+    function setLayerBg(el, url){
+      el.style.backgroundImage = `url("${url}")`;
+    }
+
+    async function crossfadeTo(nextUrl){
+      if (!photoA || !photoB) return;
+
+      // Preload for zero pop / no flash
+      await preload(nextUrl);
+
+      const active = activeIsA ? photoA : photoB;
+      const idle   = activeIsA ? photoB : photoA;
+
+      // Put next image on the idle layer and fade it in
+      setLayerBg(idle, nextUrl);
+      idle.classList.add("is-active");
+      active.classList.remove("is-active");
+
+      // Swap which layer is active after fade completes
+      setTimeout(() => {
+        activeIsA = !activeIsA;
+      }, FADE_MS);
+    }
+
+    // Init first image
+    setLayerBg(photoA, heroImages[0]);
+    photoA.classList.add("is-active");
+    photoB.classList.remove("is-active");
+
+    // Begin rotation
+    setInterval(async () => {
+      idx = (idx + 1) % heroImages.length;
+      await crossfadeTo(heroImages[idx]);
+    }, ROTATE_MS);
+
+    // =========================
+    // Smooth scroll buttons
+    // =========================
+    document.querySelectorAll("[data-scroll]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = document.querySelector(btn.getAttribute("data-scroll"));
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Keep only one FAQ open at a time
+    const faqs = document.querySelectorAll(".faq_details");
+    faqs.forEach(d => d.addEventListener("toggle", () => {
+      if (d.open) faqs.forEach(other => { if (other !== d) other.open = false; });
+    }));
+
+    // Cursor spotlight position (desktop)
+    let mx = 50, my = 20, raf = null;
+    function setSpot() {
+      document.documentElement.style.setProperty("--mx", mx + "%");
+      document.documentElement.style.setProperty("--my", my + "%");
+      raf = null;
+    }
+    window.addEventListener("mousemove", (e) => {
+      mx = (e.clientX / window.innerWidth) * 100;
+      my = (e.clientY / window.innerHeight) * 100;
+      if (!raf) raf = requestAnimationFrame(setSpot);
+    });
+
+    // Tilt + checkmark motion
+    function addTilt(el){
+      const check = el.querySelector(".check");
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width;
+        const py = (e.clientY - r.top) / r.height;
+        const rx = (py - 0.5) * -6;
+        const ry = (px - 0.5) * 6;
+        el.style.transform = `translateY(-2px) scale(1.01) rotateX(${rx}deg) rotateY(${ry}deg)`;
+        if (check) check.style.transform = `translate3d(${(px - 0.5) * 8}px, ${(py - 0.5) * 8}px, 0)`;
+      });
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "";
+        if (check) check.style.transform = "";
+      });
+    }
+    document.querySelectorAll(".bCard, .infoCard").forEach(addTilt);
+  </script>
+
+  <script
+    src="https://widgets.leadconnectorhq.com/loader.js"
+    data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+    data-widget-id="697c18400079c30268a4c73a"
+  ></script>
+
+</body>
+</html>
